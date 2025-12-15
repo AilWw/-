@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}الخدمات - مكتب اركن علينا{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="hero" style="padding: 40px 0;">
+    <div class="container">
+        <h1>الخدمات</h1>
+        <p>جميع الخدمات الحكومية الإلكترونية في مكان واحد</p>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="services">
+    <div class="container">
+        <div class="row">
+            {% for service in services %}
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>{{ service.name }}</h3>
+                    <p>{{ service.description }}</p>
+                    <div class="service-price">
+                        {% if service.is_on_sale %}
+                            <span class="original-price">{{ service.original_price|floatformat:2 }} ر.س</span>
+                            <span class="discounted-price">{{ service.discounted_price|floatformat:2 }} ر.س</span>
+                        {% else %}
+                            <span>{{ service.original_price|floatformat:2 }} ر.س</span>
+                        {% endif %}
+                    </div>
+                    <a href="https://wa.me/966552900896?text=أرغب%20في%20طلب%20خدمة:%20{{ service.name }}" target="_blank" class="btn btn-sm btn-success mb-2">
+                        <i class="fab fa-whatsapp"></i> طلب الخدمة عبر واتس أب
+                    </a>
+                    <a href="https://wa.me/966559752263?text=أرغب%20في%20طلب%20خدمة:%20{{ service.name }}" target="_blank" class="btn btn-sm btn-success">
+                        <i class="fab fa-whatsapp"></i> طلب الخدمة عبر واتس أب
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="hero" style="background: linear-gradient(135deg, #00C853 0%, #00a844 100%); color: white;">
+    <div class="container">
+        <h2 style="color: white; margin-bottom: 1rem;">هل تريد خدمة معينة؟</h2>
+        <p style="color: white; margin-bottom: 2rem;">تواصل معنا الآن عبر الواتس أب للحصول على استشارة مجانية</p>
+        <a href="https://wa.me/966552900896" target="_blank" class="btn btn-light mb-2">
+            <i class="fab fa-whatsapp"></i> تواصل معنا
+        </a>
+        <a href="https://wa.me/966559752263" target="_blank" class="btn btn-light">
+            <i class="fab fa-whatsapp"></i> تواصل معنا
+        </a>
+    </div>
+</section>
+
+{% endblock %}

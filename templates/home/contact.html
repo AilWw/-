@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}التواصل - مكتب اركن علينا{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="hero" style="padding: 40px 0;">
+    <div class="container">
+        <h1>التواصل معنا</h1>
+        <p>نحن هنا للإجابة على جميع استفساراتك</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="services" style="background: white;">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-6 mb-4">
+                <h2 style="color: #333; margin-bottom: 1.5rem;">أرسل لنا رسالة</h2>
+                <form onsubmit="handleFormSubmit(event)">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">الاسم</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">البريد الإلكتروني</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">رقم الهاتف</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">الموضوع</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">الرسالة</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background-color: #00C853; border: none;">
+                        <i class="fas fa-paper-plane"></i> إرسال الرسالة
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-6">
+                <h2 style="color: #333; margin-bottom: 1.5rem;">معلومات التواصل</h2>
+                
+                <div class="mb-4">
+                    <h4 style="color: #00C853; margin-bottom: 0.5rem;">
+                        <i class="fas fa-map-marker-alt"></i> العنوان
+                    </h4>
+                    <p style="color: #666;">الرياض، المملكة العربية السعودية</p>
+                </div>
+
+                <div class="mb-4">
+                    <h4 style="color: #00C853; margin-bottom: 0.5rem;">
+                        <i class="fas fa-phone"></i> الهاتف
+                    </h4>
+                    <p style="color: #666;">+966 552900896</p>
+                    <p style="color: #666;">+966 559752263</p>
+                </div>
+
+                <div class="mb-4">
+                    <h4 style="color: #00C853; margin-bottom: 0.5rem;">
+                        <i class="fas fa-envelope"></i> البريد الإلكتروني
+                    </h4>
+                    <p style="color: #666;">info@arkn-alna.com</p>
+                </div>
+
+                <div class="mb-4">
+                    <h4 style="color: #00C853; margin-bottom: 0.5rem;">
+                        <i class="fab fa-whatsapp"></i> واتس أب
+                    </h4>
+                    <p style="color: #666;">اضغط على الرقم للتواصل مباشرة</p>
+                    <button class="btn btn-success mb-2" onclick="window.open('https://wa.me/966552900896', '_blank')" style="background-color: #25D366; border: none;">
+                        <i class="fab fa-whatsapp"></i> +966 552900896
+                    </button><br>
+                    <button class="btn btn-success" onclick="window.open('https://wa.me/966559752263', '_blank')" style="background-color: #25D366; border: none;">
+                        <i class="fab fa-whatsapp"></i> +966 559752263
+                    </button>
+                </div>
+
+                <div class="mb-4">
+                    <h4 style="color: #00C853; margin-bottom: 0.5rem;">
+                        <i class="fas fa-clock"></i> ساعات العمل
+                    </h4>
+                    <p style="color: #666;">
+                        السبت - الخميس: 9:00 صباحاً - 6:00 مساءً<br>
+                        الجمعة: مغلق<br>
+                        الأحد: 9:00 صباحاً - 6:00 مساءً
+                    </p>
+                </div>
+
+                <div>
+                    <h4 style="color: #00C853; margin-bottom: 1rem;">تابعنا على وسائل التواصل</h4>
+                    <div class="social-links" style="justify-content: flex-start;">
+                        <a href="https://facebook.com" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

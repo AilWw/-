@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block title %}مكتب اركن علينا - الصفحة الرئيسية{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>مكتب اركن علينا</h1>
+        <p>انجاز سريع لخدمات الأفراد والمؤسسات في جميع أنحاء المملكة</p>
+        <p style="color: #666; font-size: 1rem;">والتقديم بشكل سريع بفضل الله</p>
+        <a href="https://wa.me/966552900896" target="_blank" class="btn btn-success">
+            <i class="fab fa-whatsapp"></i> طلب خدمة
+        </a>
+        <a href="https://wa.me/966559752263" target="_blank" class="btn btn-success">
+            <i class="fab fa-whatsapp"></i> طلب خدمة
+        </a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>مكتب خدمات عامة الرياض</h3>
+                    <p>نقدم في مكتبنا مجموعة من الخدمات الحكومية الالكترونية في مختلف القطاعات، مما يجعلنا أفضل مكتب خدمات متكامل لكل احتياجاتك من تعقيب وخدمات على مستوى الأفراد أو المؤسسات.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>أفضل خدمات عامة وتعقيب</h3>
+                    <p>مكتب خدمات عامة متميز بالأمانة والسلوك المهني الراقي وجودة خدمات عالية مع نسبة خطأ منعدمة.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>مكتب خدمات إلكترونية</h3>
+                    <p>اهم ما يميزنا سرعة الإنجاز لكل خدماتك بشكل آمن وسهل، مع خبرة تمتد ل 12 عام.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>مكتب خدمات حكومية وتعقيب</h3>
+                    <p>مكتبنا يقدم خدمات عامة وخدمة تعقيب مميزة تهتم بانجاز خدمتك بشكل كامل وصحيح وبسرعة تلبية حاجتك.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">خدمات عامة</h2>
+        <div class="row">
+            {% for service in featured_services %}
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>{{ service.name }}</h3>
+                    <p>{{ service.description }}</p>
+                    <div class="service-price">
+                        {% if service.is_on_sale %}
+                            <span class="original-price">{{ service.original_price|floatformat:2 }} ر.س</span>
+                            <span class="discounted-price">{{ service.discounted_price|floatformat:2 }} ر.س</span>
+                        {% else %}
+                            <span>{{ service.original_price|floatformat:2 }} ر.س</span>
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'services' %}" class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-eye"></i> نظرة سريعة
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5">
+            <a href="{% url 'services' %}" class="btn btn-lg btn-success">مشاهدة جميع الخدمات</a>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section class="services" style="background: white;">
+    <div class="container">
+        <h2 class="section-title">مقالات مهمة</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <h3>حماية الأجور للمنشآت الصغيرة</h3>
+                    <p>برنامج حماية الأجور يضمن حقوق العاملين السعوديين والوافدين في المنشآت الصغيرة، ويعزز الشفافية.</p>
+                    <a href="#" class="btn">قراءة المزيد</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <h3>التقييم الذاتي قوى</h3>
+                    <p>خدمة إلكترونية لمساعدة المنشآت على قياس مدى امتثالها لأنظمة العمل واللوائح ذات الصلة، يشمل التوطين، حماية الأجور والسلامة المهنية.</p>
+                    <a href="#" class="btn">قراءة المزيد</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <h3>استخراج السجل التجاري للموظف الحكومي</h3>
+                    <p>خدمة إلكترونية عبر بوابة وزارة التجارة لإكمال الإجراءات بسرعة للموظفين الحكوميين.</p>
+                    <a href="#" class="btn">قراءة المزيد</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title">شهادة عملاءنا</h2>
+        <p class="text-center mb-4" style="font-size: 1.1rem; color: #666;">ماذا قالوا عنا...</p>
+        <div class="row">
+            {% for testimonial in testimonials %}
+            <div class="col-md-6 col-lg-3">
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= testimonial.rating %}
+                                <i class="fas fa-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="testimonial-text">{{ testimonial.text }}</p>
+                    <p class="testimonial-author">{{ testimonial.name }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+    <div class="container">
+        <h2 class="section-title">أسئلة تهمك</h2>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                {% for faq in faqs %}
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>{{ faq.question }}</h4>
+                        <span class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ faq.answer }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
